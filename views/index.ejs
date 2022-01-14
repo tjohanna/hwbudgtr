@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+        <!-- <title>Budgtr</title> -->
+    </head>
+<body>
+        <div class="container">
+            <h1>Budgtr ALL</h1>
+        </div>
+
+        <%let bankAccount = 0;%>
+        <%for(let i = 0; i < allBudgets.length; i++){ %>
+            <%bankAccount = bankAccount + allBudgets[i].amount;%>
+                <%}%> 
+                <!-- <h4>Bank Account Total: <%=bankAccount%> </h4> -->
+
+                <%if(bankAccount <= 0 ){%>
+                    <h4 style="background-color: red;">Bank Account Total: <%=bankAccount%> </h4>
+                    <%} else if(bankAccount >= 1000){%>
+                        <h4 style="background-color: green;">Bank Account Total: <%=bankAccount%> </h4>
+                        <%} else{%>
+                            <h4>Bank Account Total: <%=bankAccount%> </h4>
+                        <%}%>
+
+ <!-- ** Couldn't get this to work as a button -->
+    <!-- <form action="/budgets/new" method="POST">
+            <input type="submit" value="Create New" />
+        </form> -->
+
+    <a href="/budgets/new">Create New Fruit</a>
+
+
+        <table style="width:400px">
+            <tr>
+              <!-- ** just to visualize -->
+              <!-- <td>Date</td>
+              <td>Name</td>
+              <td>Amount</td> -->
+            </tr>
+
+            <!-- Missing (.)dot notation tripped me up for some time >_< -->
+            <tr>
+            <% for(let i = 0; i < allBudgets.length; i++){ %>
+                <tr>
+                    <td><%= allBudgets[i].date %></td>
+                    <td><a href="/budgets/<%= i %>"><%= allBudgets[i].name %></a></td>
+                    <td><%= allBudgets[i].amount %><td>   
+                 </tr>
+                <% } %>
+           
+            </table>
+
+
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+        <title> Show Page **</title>
+    </head>   
+
+    <body>
+        <div class="container">
+            <h1><%=budget.name; %></h1>
+        </div>
+
+        <form action="/budgets">
+            <input type="submit" value="Back" />
+        </form>
+
+       <p>Date : <%=budget.name; %> </p> 
+       <p>From : <%=budget.from; %> </p> 
+       <p>Amount : <%=budget.amount; %> </p> 
+       <p>Tags : <%=budget.tags; %> </p> 
+
+    </body>
+</html>
